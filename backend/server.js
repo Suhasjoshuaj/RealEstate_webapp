@@ -22,8 +22,8 @@ app.post("/send-form", async (req, res) => {
   const { name, phone, email, message } = req.body;
   try {
     const data = await resend.emails.send({
-      from: "noreply@gateddream.com", // must be verified in Resend
-      to: "kishorek@gateddream.com", // your Zoho mail
+      from: "noreply@gateddream.com", // Resend verified
+      to: "kishorek@gateddream.com", // My Zoho mail
       subject: `New Inquiry from ${name}`,
       html: `
         <h3>New Inquiry from Website</h3>

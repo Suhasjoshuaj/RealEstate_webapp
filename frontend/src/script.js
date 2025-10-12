@@ -1,7 +1,7 @@
 // Convex fetch
 import { ConvexClient } from "convex/browser";
 
-// Replace with your real Convex deployment URL
+// Convex deployment URL
 const client = new ConvexClient("https://beaming-dachshund-33.convex.cloud");
 
 // Where to inject properties
