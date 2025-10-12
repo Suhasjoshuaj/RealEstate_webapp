@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GatedDream – Premium Gated Communities</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-inner">
+      <div class="brand">
+        <!-- small logo mark can be added next to text later -->
+        <h1><a class="logo" href="#home">gateddream<span style="color: rgb(154, 13, 13);">.</span>com</a></h1>
+      </div>
+
+      <ul aria-label="Primary navigation">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" role="banner">
+    <div class="hero-inner">
+      <h1>Find Your Dream Home in Hyderabad's Premium Gated Communities</h1>
+      <p class="sub">Curated properties • Personalized guidance • Trusted since 2018</p>
+      <a href="#properties"><button class="cta-btn" id="exploreBtn" aria-controls="properties">Explore Properties</button></a>
+    </div>
+  </header>
+
+  <!-- About (ADDED) -->
+  <section id="about" class="about" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Us</h2>
+    <p>
+      Founded in 2018 as CitySFT Realty Solutions, we set out to simplify property decisions and earn the trust
+      of every client. Today, as <strong>GatedDream</strong>, we craft curated possibilities for dreamers, families,
+      and investors — because your journey deserves more than a transaction.
+    </p>
+
+    <div class="stats" aria-hidden="false">
+      <div class="stat">50+ Families</div>
+      <div class="stat">50+ Properties</div>
+      <div class="stat">10+ Years</div>
+      <div class="stat">25+ Locations</div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" aria-labelledby="services-heading">
+    <h2 id="services-heading">Our Services</h2>
+    <div class="services">
+      <div class="svc">
+        <h3>Buy Properties</h3>
+        <p>Curated gated communities in Hyderabad with expert guidance to match your lifestyle and budget.</p>
+      </div>
+      <div class="svc">
+        <h3>Sell Properties</h3>
+        <p>Helping clients get the best value by showcasing properties with the right buyers and market strategy.</p>
+      </div>
+      <div class="svc">
+        <h3>Investment Guidance</h3>
+        <p>Comprehensive market analysis to help you make smart, long-term investment decisions with confidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properties -->
+  <section id="properties" aria-labelledby="properties-heading">
+    <h2 id="properties-heading">Featured Properties</h2>
+    <div id="property-list" class="property-cards" aria-live="polite">
+      <!-- cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Tell Us What You're Looking For</h2>
+    <p style="text-align:center; max-width:700px; margin:0 auto 2rem; color:rgba(31,41,55,0.8);">
+      Ready to find your dream home? Get in touch with us and let's start your property journey today.
+    </p>
+
+    <div class="contact-wrap">
+      <!-- Left: Form -->
+      <form id="contactForm" novalidate>
+        <div style="display:flex; gap:1rem;">
+          <input name="name" type="text" placeholder="Name" required aria-label="Full name" />
+          <input name="phone" type="tel" placeholder="Phone" aria-label="Phone number" />
+        </div>
+        <input name="email" type="email" placeholder="Email" required aria-label="Email address" />
+        <textarea name="message" rows="5" placeholder="Tell us about your property requirements..." required
+          aria-label="Message"></textarea>
+        <button type="submit">Send Message →</button>
+      </form>
+
+      <!-- Right: Info -->
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>📞 +91 96181 11603</p>
+        <p>✉️ kishorek@gateddream.com</p>
+        <p>📍 Hyderabad, Telangana, India</p>
+
+        <div class="why">
+          <h4>Why Choose Us?</h4>
+          <ul>
+            <li>10+ Years of Experience</li>
+            <li>50+ Happy Families</li>
+            <li>Premium Property Portfolio</li>
+            <li>Transparent Dealings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p id="form-status" style="margin-top:1rem; color:#1f2937;"></p>
+
+  </section>
+
+
+  <footer>
+    <p>CitySFT → GatedDream. Building trust since day one.</p>
+    <p>© 2025 GatedDream. All Rights Reserved.</p>
+  </footer>
+
+  <!-- WhatsApp Floating (ADDED) -->
+  <a class="whatsapp-btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/919618111603"
+    aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path
+        d="M20.52 3.48A11.85 11.85 0 0012 .5 11.9 11.9 0 003.59 4.02a11.9 11.9 0 00-2 13.73L.5 23.5l5.9-1.55A11.85 11.85 0 0012 23.5c3.18 0 6.16-1.24 8.41-3.5A11.9 11.9 0 0024 11.5a11.85 11.85 0 00-3.48-8.02zM12 21.5a9.2 9.2 0 01-4.84-1.4l-.35-.21-3.5.92.94-3.41-.23-.36A9.2 9.2 0 1121.2 11.5 9.18 9.18 0 0112 21.5z">
+      </path>
+      <path
+        d="M17.6 14.13c-.28-.14-1.65-.81-1.9-.9-.25-.09-.44-.14-.63.14-.19.28-.72.9-.88 1.09-.16.19-.32.21-.6.07a5.83 5.83 0 01-1.72-1.06 6.6 6.6 0 01-1.21-1.49c-.13-.22 0-.34.1-.45.09-.09.2-.21.3-.32.09-.11.13-.2.2-.34.07-.14.03-.26-.02-.36-.06-.1-.63-1.52-.86-2.07-.23-.54-.47-.47-.64-.48-.17-.01-.36-.01-.55-.01-.19 0-.5.07-.76.36-.26.29-1 1-1 2.44 0 1.44 1.03 2.84 1.17 3.04.14.21 2.02 3.16 4.9 4.42 2.04.88 2.84.9 3.08.85.24-.05 1.2-.49 1.37-1.02.16-.53.16-.99.11-1.08-.05-.09-.18-.14-.37-.24z">
+      </path>
+    </svg>
+    WhatsApp
+  </a>
+  <!-- <script src="https://unpkg.com/convex@1.27.3/browser"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/convex@latest/dist/browser.bundle.js"></script> -->
+  <script type="module" src="./src/script.js"></script>
+</body>
+
+</html>
