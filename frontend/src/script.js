@@ -49,6 +49,8 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     message: form.message.value,
   };
 
+  const statusEl = document.getElementById("form-status"); 
+
   try {
     const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/send-form`, {
       method: "POST",
@@ -57,12 +59,28 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     });
 
     const result = await res.json();
-    document.getElementById("form-status").innerText = result.success
-      ? " Message sent!"
-      : " Failed to send message.";
-      form.reset();
+    // trial two--
+    // result.success ? statusEl.innerText = "✅ Message sent!" : statusEl.innerText = "❌ Failed to send message.";
+
+    // trial one--  
+    // document.getElementById("form-status").innerText = result.success
+      // ? " Message sent!"
+      // : " Failed to send message.";
+      // form.reset();
+      
+      // trial three-- 
+      if (result.success){
+        statusEl.innerText = "✅ Message sent!";
+        form.reset();
+      } else {
+        statusEl.innerText = "❌ Failed to send message.";
+      }
   } catch (err) {
     console.error("Error submitting contact form:", err);
-    document.getElementById("form-status").innerText = "⚠️ Error sending form.";
+    statusEl.innerText = "⚠️ Error sending form.";
   }
+
+  setTimeout(() => {
+    statusEl.innerText = "";
+  }, 3000);
 });
