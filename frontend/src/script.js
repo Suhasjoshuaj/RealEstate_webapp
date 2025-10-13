@@ -2,7 +2,7 @@
 import { ConvexClient } from "convex/browser";
 
 // Convex deployment URL
-const client = new ConvexClient("https://beaming-dachshund-33.convex.cloud");
+const client = new ConvexClient(import.meta.env.VITE_CONVEX_URL);
 
 // Where to inject properties
 const propertyList = document.getElementById("property-list");
@@ -50,7 +50,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
   };
 
   try {
-    const res = await fetch("http://localhost:5000/send-form", {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/send-form`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
