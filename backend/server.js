@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 const app = express();
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -23,7 +23,7 @@ app.post("/send-form", async (req, res) => {
   try {
     const data = await resend.emails.send({
       from: "noreply@gateddream.com", // Resend verified
-      to: `${import.meta.env.ZMAIL}`, // My Zoho mail
+      to: process.env.ZMAIL, // My Zoho mail
       subject: `New Inquiry from ${name}`,
       html: `
         <h3>New Inquiry from Website</h3>
@@ -40,4 +40,4 @@ app.post("/send-form", async (req, res) => {
   }
 });
 
-app.listen(port, () => console.log(`🚀 Backend running on http://localhost:${port}`));
+app.listen(port, () => console.log(`Backend running on port ${port}`));
