@@ -84,3 +84,36 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     statusEl.innerText = "";
   }, 3000);
 });
+
+//hamburger menu toggle 
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector("nav ul");
+const navItems = document.querySelectorAll("nav ul li a");
+
+menuToggle?.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+  menuToggle.classList.toggle("active");
+  const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+  menuToggle.setAttribute("aria-expanded", !expanded);
+});
+
+// Close menu on link click 
+navItems.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+// Close menu when clicking outside of it
+document.addEventListener("click", (event) => {
+  const isClickInsideNav = navLinks.contains(event.target);
+  const isToggleButton = menuToggle.contains(event.target);
+
+  if (!isClickInsideNav && !isToggleButton) {
+    navLinks.classList.remove("show");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+  }
+});
