@@ -26,7 +26,7 @@ async function renderProperties() {
         <div class="card-body">
           <h4>${p.title}</h4>
           <p>${p.location}</p>
-          <p>From <strong>₹${p.price.toLocaleString()}</strong></p>
+          <p>From <strong>₹${p.price}</strong></p>
         </div>`;
       propertyList.appendChild(card);
     });
